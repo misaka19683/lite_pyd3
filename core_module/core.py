@@ -736,8 +736,8 @@ class Equation20Hamiltonian(SpinSystemModel):
         if self.params.boundary == "periodic":
             self._add_coupling_equation20(0, L - 1)
         # 复用在此函数中没有用的J_prime作为lambda的数值
-        self.add_multi_terms(self.params.J_prime)
-
+        # self.add_multi_terms(self.params.J_prime)
+        self.add_multi_terms_new(self.params.J_prime)
 
 class Equation22Hamiltonian(SpinSystemModel):
     """构建磁场方程22哈密顿量"""
