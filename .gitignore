@@ -13,6 +13,5 @@ wheels/
 local_logs/
 1_problem_debug_logs/
 
-*.xml
-*.iml
 .idea/
+.vscode/
