@@ -132,10 +132,11 @@ def process_dataframe(df:pl.DataFrame,mode:Optional[Literal['local','slurm','deb
         pass
     elif mode == 'local':
         executor.update_parameters(
-            timeout_min=60,
+            timeout_min=60*24*10,
             cpus_per_task=8,
             mem_gb=4,  # 每个任务使用 4 GB 内存
             tasks_per_node=1,#?  # 每个节点运行 1 个任务
+            # max_workers=5,
         )
     elif mode == 'slurm':
         executor.update_parameters(
